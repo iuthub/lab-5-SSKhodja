@@ -1,0 +1,58 @@
+A. /quick/gim
+B. /\w+@\w+\.\w{2,3}/gim
+C. /\+998-\d{2}-\d{3}-\d{4}/gim
+
+D.
+<?php
+	preg_match_all('/\S+/i', 'The quick " " brown fox', $matches);
+	foreach ($matches as $value)
+	{
+		if (is_array($value))
+		{
+		    foreach ($value as $ivalue)
+			{
+			  echo $ivalue;
+			}
+		}  
+	}
+?>
+
+E.
+<?php
+	preg_match_all('/\d+|,+|\.+/i', '$123,34.00A', $matches);
+	foreach ($matches as $value)
+	{
+		if (is_array($value))
+		{
+		    foreach ($value as $ivalue)
+			{
+			  echo $ivalue;
+			}
+		}  
+	}
+?>
+
+F.
+<?php
+	preg_match_all('/[^\n]/i', "Twinkle, twinkle, little star,\nHow I wonder what you are.\nUp above the world so high,\nLike a diamond in the sky.", $matches);
+	foreach ($matches as $value)
+	{
+		if (is_array($value))
+		{
+		    foreach ($value as $ivalue)
+			{
+			  echo $ivalue;
+			}
+		}  
+	}
+?>
+
+G.
+<?php
+	preg_match_all('/\[(.+?)\]/i', 'The quick " " brown [fox]', $matches);
+
+	foreach ($matches[1] as $value)
+	{
+		echo $value;
+	}
+?>
